@@ -13,8 +13,63 @@
  - Implement your race function in a protocol extension. It should return the time it takes for the vehicle the function was called on to travel 1000 meters.
  - Create two more classes that conform to `Racer` or make your existing vehicles conform to `Racer`. Create another function outside of your classes that will take in two `Racer` objects and return the winner.
  */
-import Foundation
 
+import UIKit
+
+protocol Vehicle {
+    
+    var speed:Double { get }
+    var isMoving:Bool { get set}
+  
+  mutating func startMoving()
+  mutating func stopMoving()
+    
+}
+
+extension Vehicle {
+    mutating func startMoving() {
+        if isMoving {
+            print("the vehicle is already moving")
+        } else {
+            isMoving = true
+            print("The vehicle is moving")
+        }
+    }
+    mutating func stopMoving() {
+        if isMoving {
+            isMoving = false
+            print("the vehicle has stopped")
+        } else {
+            print("The vehicle has already stopped")
+        }
+    }
+}
+
+class LawnMower: Vehicle {
+    var speed: Double
+    var isMoving = true
+
+    init(speed: Double, isMoving:Bool) {
+        self.speed = speed
+        self.isMoving = isMoving
+    }
+}
+class Truck: Vehicle  {
+    var speed: Double
+    var isMoving = false
+
+    init(speed:Double, isMoving:Bool) {
+        self.speed = speed
+        self.isMoving = isMoving
+    }
+}
+
+var tractor = LawnMower(speed: 10, isMoving: false)
+tractor.startMoving()
+
+
+var f150 = Truck(speed: 50, isMoving: true)
+f150.stopMoving()
 
 
 

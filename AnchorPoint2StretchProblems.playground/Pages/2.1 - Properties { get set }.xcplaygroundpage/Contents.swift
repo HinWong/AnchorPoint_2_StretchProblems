@@ -20,8 +20,29 @@
  */
 import Foundation
 
+var currentYear:Int {
+    Calendar.current.component(.year, from: Date())
+}
 
+struct Person {
+    
+    var firstName:String
+    var lastName:String
+    var yearOfBirth:Int
+    var age:Int {
+        get {
+            return currentYear - yearOfBirth
+        }
+        set {
+            yearOfBirth = currentYear - newValue
+        }
+    }
+}
 
+var person = Person(firstName: "Hin", lastName: "Wong", yearOfBirth: 1995)
 
-
+print(person.firstName)
+print(person.lastName)
+print(person.yearOfBirth)
+print(person.age)
 //: [Protocols](@next)

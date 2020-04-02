@@ -25,7 +25,28 @@
  */
 import Foundation
 
+let anArray = [0, 26, 34, 39, 55, 76, 87, 45, 90, 100]
 
+func loopingArray (array: [Int]) {
+    for integer in anArray {
+        if integer <= 50 {
+            print("low")
+        } else {
+            print("high")
+        }
+        if integer.isMultiple(of: 13) {
+            print("didn't learn this one in school")
+        } else {
+            print("that's easy")
+        }
+        if integer <= anArray[anArray.count - 1] {
+            print("getting bigger")
+        } else {
+            print("it stopped growing")
+        }
+    }
+}
+ loopingArray(array: anArray)
 
 
 

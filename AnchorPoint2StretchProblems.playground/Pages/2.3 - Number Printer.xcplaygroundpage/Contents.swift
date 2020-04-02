@@ -34,10 +34,105 @@
  */
 import Foundation
 
+func numberPrinter (number:Int) {
+    switch number {
+    case 0:
+        let zero = """
+         ---
+        |   |
+        |   |
+         ---
+        """
+        print("\(zero)")
+    case 1:
+        let one = """
+        |
+        |
+        |
+        """
+        print("\(one)")
+    case 2:
+        let two = """
+ ---
+    |
+ ---
+|
+ ---
+"""
+
+        print("\(two)")
+    case 3:
+        let three = """
+---
+   |
+---
+   |
+---
+"""
+        print("\(three)")
+    case 4:
+        let four = """
+|   |
+|   |
+ ---|
+    |
+    |
+"""
+        print("\(four)")
+    case 5:
+        let five = """
+ ---
+|
+ ---
+    |
+ ---
+"""
+        print("\(five)")
+    case 6:
+        let six = """
+ ---
+|
+ ---
+|   |
+ ---
+"""
+        print("\(six)")
+    case 7:
+        let seven = """
+---
+   |
+   |
+   |
+"""
+        print("\(seven)")
+    case 8:
+        let eight = """
+ ---
+|   |
+ ---
+|   |
+ ---
+"""
+        print("\(eight)")
+    case 9:
+        let nine = """
+ ---
+|   |
+ ---
+    |
+ ---
+"""
+        print("\(nine)")
+    default:
+        print("Impossible")
+    }
+}
+
+numberPrinter(number: 0)
 
 
-
-
-
-
+//let bottomBar = "--"
+//let topBar = "--"
+//let leftSide = "|"
+//let rightSide = "|"
 //: [Ternary Operator](@next)
